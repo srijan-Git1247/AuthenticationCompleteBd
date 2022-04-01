@@ -1,0 +1,76 @@
+{
+    "events": [
+      {
+        "id": "1",
+        "name": "Shovit Tamang",
+        "slug": "Donation1",
+        "venue": "Stnm hospital",
+        "address": "Sochakgang",
+        "units": "70 Units",
+        "date": "June 09, 2021",
+        "time": "10:00 PM EST",
+        "description": "70 Units is needed!!",
+        "image": "/images/Blood-Donation-Transparent-Background.png"
+      },
+      {
+        "id": "2",
+        "name": "Sankalp",
+        "slug": "Donation2",
+        "venue": "Manipal Hospital",
+        "address": "Tadong",
+        "units": "80 units",
+        "date": "June 2, 2021",
+        "time": "8:00 PM EST",
+        "description": "80 units neeeded!!",
+        "image": "/images/Blood-Donation-Transparent-Background.png"
+      },
+      {
+        "id": "3",
+        "name": "Pratik",
+        "slug": "Donation3",
+        "venue": "Stnm",
+        "address": "Tadong",
+        "units": "30 units",
+        "date": "June 11, 2021",
+        "time": "7:00 PM EST",
+        "description": "30 units please",
+        "image": "/images/Blood-Donation-Transparent-Background.png"
+      },
+      {
+        "id": "4",
+        "name": "Shahil",
+        "slug": "Donation4",
+        "venue": "Blood Camp",
+        "address": "Zero Point",
+        "units": "60 units",
+        "date": "June 20, 2021",
+        "time": "10:00 PM EST",
+        "description": "Help us to help you",
+        "image": "/images/Blood-Donation-Transparent-Background.png"
+      },
+      {
+        "id": "5",
+        "name": "Mohit",
+        "slug": "Donation5",
+        "venue": "Mahe Clinics",
+        "address": "MG/Marg",
+        "units": "88 units",
+        "date": "June 30, 2021",
+        "time": "8:00 PM EST",
+        "description": "Please donate",
+        "image": "/images/Blood-Donation-Transparent-Background.png"
+      },
+      {
+        "id": "6",
+        "name": "Parivesh",
+        "slug": "Donation6",
+        "venue": "Red Fest Camp",
+        "address": "Manan Kendra",
+        "units": "20 units",
+        "date": "July 2, 2021",
+        "time": "8:00 PM EST",
+        "description": "For a cause!!",
+        "image": "/images/Blood-Donation-Transparent-Background.png"
+      }
+    ]
+  }
