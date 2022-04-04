@@ -7,6 +7,11 @@ export default function Footer() {
       <p>Copyright &copy; Blood Quests 2022</p>  
       <p>
           <Link href="/about">About</Link>
+
+
+
+
+          
       </p>
     </footer>
   )

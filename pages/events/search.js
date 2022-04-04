@@ -9,6 +9,8 @@ export default function SearchPage({ events }) {
   const router = useRouter();
   return (
     <Layout title="Search Results">
+
+      
       <Link href="/events">Previous Page</Link>
       <h1>Search Results for {router.query.term}</h1>
       {events === 0 && <h1>No Requests</h1>}

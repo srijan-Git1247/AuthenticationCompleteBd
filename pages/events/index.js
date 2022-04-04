@@ -3,7 +3,9 @@ import Layout from "../../components/Layout";
 import { API_URL } from "../../config/index";
 import Link from "next/link";
 import RequestItem from "../../components/RequestItem";
-const PER_PAGE=4;
+const PER_PAGE=8;
+
+import Search from "../../components/Search";
 export default function EventsPage({ events,page,total}) {
 
 
@@ -11,7 +13,9 @@ export default function EventsPage({ events,page,total}) {
   const lastPage=Math.ceil(total/PER_PAGE);
   return (
     <Layout>
+      <Link href="/">Go back</Link>
       <h1>Active Requirements</h1>
+      <Search></Search>
       {events === 0 && <h1>No Requests</h1>}
 
       {events.map((evt) => (
@@ -38,11 +42,12 @@ export default function EventsPage({ events,page,total}) {
 }
 export async function getServerSideProps({query:{page=1}}) {
 
+
   const start=+page===1?0:(+page-1)*PER_PAGE
 //fetching count
 const totalRes = await fetch(`${API_URL}/events/count`);
   
-  
+
   const total = await totalRes.json();
 
 
