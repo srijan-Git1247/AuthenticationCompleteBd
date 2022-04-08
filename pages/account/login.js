@@ -13,7 +13,7 @@ export default function LoginPage() {
 
   const { login, error } = useContext(AuthContext);
 
-  useEffect(()=>error && toast.error(error));
+  useEffect(() => error && toast.error(error));
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,7 +24,7 @@ export default function LoginPage() {
       <div className={styles.auth}>
         <h1>
           <RiUserHeartFill />
-          &nbsp;Log In
+          &nbsp;Sign In
         </h1>
         <ToastContainer />
         <form onSubmit={handleSubmit}>
@@ -55,6 +55,9 @@ export default function LoginPage() {
         <p>
           New User?
           <Link href="/account/register"> Create an Account</Link>
+        </p>
+        <p>
+          <Link href="/account/forgotpassword">Forgot Password?</Link>
         </p>
       </div>
     </Layout>

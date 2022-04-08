@@ -10,8 +10,54 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null); //userstate
   const [error, setError] = useState(null); //errorstate
   useEffect(() => checkUserLoggedIn(), []);
-  const router=useRouter();
+  const router = useRouter();
   //Registration Method
+
+  const forgot = async ({ email }) => {
+    const res = await fetch(`${APP_URL}/api/forgotpassword`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email }),
+    });
+    const data = await res.json();
+    if (res.ok) {
+      alert("Email has been sent");
+      
+    } else {
+      setError(data.message);
+      setError(null);
+    }
+  };
+const reset=async({code,password,passwordConfirmation})=>{
+
+  const res = await fetch(`${APP_URL}/api/resetpassword`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({code,password,passwordConfirmation }),
+  });
+  const data = await res.json();
+    if (res.ok) {
+      alert("Password has been changed");
+      router.push("/account/login");
+    } else {
+     // console.log(data.message);
+      setError(data.message);
+      setError(null);
+    }
+
+
+};
+
+
+
+
+
+
+
 
   const register = async (user) => {
     const res = await fetch(`${APP_URL}/api/register`, {
@@ -23,7 +69,7 @@ export const AuthProvider = ({ children }) => {
     });
     //console.log({ identifier, password });
     const data = await res.json();
-   // console.log(data);
+    // console.log(data);
     if (res.ok) {
       //coming from api/login
       setUser(data.user);
@@ -61,23 +107,17 @@ export const AuthProvider = ({ children }) => {
 
   //Logout user
   const logout = async () => {
-    const res=await fetch(`${APP_URL}/api/logout`,{
-
-        method:"POST"
-
-
-
-
+    const res = await fetch(`${APP_URL}/api/logout`, {
+      method: "POST",
     });
-    if(res.ok)
-    {
-        setUser(null);
-        router.push("/");
+    if (res.ok) {
+      setUser(null);
+      router.push("/");
     }
   };
   const checkUserLoggedIn = async (user) => {
-    const res = await fetch(`${APP_URL}/api/user`)
-    const data = await res.json()
+    const res = await fetch(`${APP_URL}/api/user`);
+    const data = await res.json();
 
     if (res.ok) {
       setUser(data.user);
@@ -87,7 +127,9 @@ export const AuthProvider = ({ children }) => {
     }
   };
   return (
-    <AuthContext.Provider value={{ user, error, register, login, logout }}>
+    <AuthContext.Provider
+      value={{ user, error, register, login, logout, forgot,reset }}
+    >
       {children}
     </AuthContext.Provider>
   );

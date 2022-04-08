@@ -17,11 +17,17 @@ export default function Header() {
 
       <nav>
         <ul>
+        <li>
+            <Link href="/camps">
+              <a>Upcoming Blood Donation Camps</a>
+            </Link>
+          </li>
           <li>
             <Link href="/events">
               <a>Active Requirements</a>
             </Link>
           </li>
+
           {user ? (
             //logged in case
             <>
@@ -53,7 +59,7 @@ export default function Header() {
                 <Link href="/account/login">
                   <a className="btn-secondary btn-icon" id="main">
                     <FaSignInAlt />
-                    Login
+                    Sign In
                   </a>
                 </Link>
               </li>

@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { API_URL } from "../../config/index";
 import Link from "next/link";
 import styles from "../../styles/Form.module.css";
-import {Alert} from "react";
+import { Alert } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -30,11 +30,6 @@ export default function add() {
     const hasEmptyFields = Object.values(values).some(
       (element) => element === ""
     );
-    
-    
-  
-
-
 
     if (hasEmptyFields) {
       toast.error("Please fill in all the fields");
@@ -62,7 +57,7 @@ export default function add() {
   };
   return (
     <Layout title="Request Blood">
-      <Link href="/events">Go back</Link>
+      <Link href="/events">&lt;Back</Link>
       <h1>Request</h1>
       <ToastContainer />
 
@@ -130,7 +125,8 @@ export default function add() {
           </div>
           <div>
             <label htmlFor="BloodType">Blood Type</label>
-            <select className="blood"
+            <select
+              className="blood"
               type="Text"
               id="BloodType"
               name="BloodType"
